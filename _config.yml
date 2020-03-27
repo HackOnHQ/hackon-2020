@@ -1,0 +1,22 @@
+defaults:
+  -
+    values:
+      title: HackOn
+      tagline: A Pan-India Virtual Hackathon
+      daterange: 11th April 2020 to 19th April 2020
+      assets:
+        small_logo: './assets/img/main-logo.svg'
+        logo: './assets/img/main-logo.svg'
+      socials:
+        devfolio: https://hackon.devfolio.co/
+        discord: https://discord.gg/RsQQKV7
+        workshops: https://forms.gle/QFUvfQrgmaRuBNoy6
+        telegram: https://t.me/hackathonhackers
+
+        schedule:
+
+
+collections_dir: _collections
+
+collections:
+  - faq

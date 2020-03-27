@@ -1,0 +1,486 @@
+<html lang="en">
+
+    {% include header.html %}
+    <body>
+	    
+        {% include hero.html %}
+        <div class="checkered line"></div>
+
+        <div class="container page-content">
+            <div class="buttons align-self-center justify-content-center row">
+                <a href="{{ page.socials.discord}}">
+                    <button type="button" class="btn btn-outline-primary"><i class="fab fa-discord"></i>Join Discord</button>
+                </a>
+                <a href="{{ page.socials.telegram}}">
+                    <button type="button" class="btn btn-outline-primary"><i class="fab fa-telegram"></i>Join Telegram</button>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    {{ content }}
+
+                    <h2>Tracks</h2>
+                     <p>
+                       At HackOn, we have different tracks. Your project need not be focused on solely one track, it could be an amalgamation of several tracks. These tracks have been chosen on the basis of the problems we all are facing due to the pandemic, and how technology can be utilised in such cases.
+                        </p>
+
+                        <style>
+                            .themeclass-grid{
+                                display: grid;
+                                grid-gap: 3em;
+                                grid-template-columns: repeat(2,1fr);
+                            }
+                            .themeclass-grid > .flip{
+                               margin: 0 auto;
+                            }
+                            @media screen and ( max-width: 992px)
+                            {.themeclass-grid{
+                                grid-template-columns: 1fr;
+                            }
+                            }
+                            @media screen and (max-width: 450px){
+                                .themeclass-grid .flip{
+                                    width: 100%;
+                                }
+                                .flip .back{
+                                    overflow: scroll;
+                                }
+                                .flip .back::-webkit-scrollbar{
+                                    width: 0;
+                                }
+                            }
+                        </style>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+                             
+                            
+                            #theme {
+                              box-sizing: border-box;
+                              font-weight: normal;
+                              color: #555;
+                              background: #222;
+                              text-align: center;
+                              font-family: 'Roboto Mono';
+                              padding: 1em;
+                            }
+                            
+                             .flip > .front, .flip > .back {
+                                 display: block;
+                                 transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                 transition-duration: 0.5s;
+                                 transition-property: transform, opacity;
+                            }
+                             .flip > .front {
+                                 transform: rotateY(0deg);
+                            }
+                             .flip > .back {
+                                 position: absolute;
+                                 opacity: 0;
+                                 top: 0px;
+                                 left: 0px;
+                                 width: 100%;
+                                 height: 100%;
+                                 transform: rotateY(-180deg);
+                            }
+                             .flip:hover > .front {
+                                 display: none;
+                                 transform: rotateY(180deg);
+                            }
+                             .flip:hover > .back {
+                                 position: relative;
+                                 opacity: 1;
+                                 transform: rotateY(0deg);
+                            }
+                             .flip.flip-vertical > .back {
+                                 transform: rotateX(-180deg);
+                            }
+                             .flip.flip-vertical:hover > .front {
+                                 transform: rotateX(180deg);
+                            }
+                             .flip.flip-vertical:hover > .back {
+                                 transform: rotateX(0deg);
+                            }
+                             .flip {
+                                 position: relative;
+                                 display: inline-block;
+                                 margin-right: 2px;
+                                 margin-bottom: 1em;
+                                 width: 400px;
+                            }
+                             .flip > .front, .flip > .back {
+                                 display: block;
+                                 color: white;
+                                 width: inherit;
+                                 background-size: cover !important;
+                                 background-position: center !important;
+                                 height: 220px;
+                                 padding: 1em 2em;
+                                 background: #313131;
+                                 border-radius: 10px;
+                            }
+                             .flip > .front p, .flip > .back p {
+                                 font-size: 0.9125rem;
+                                 line-height: 160%;
+                                 color: #999;
+                            }
+                             .text-shadow {
+                                 text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+                            }
+                             
+                            
+                            
+                            #faq a {
+                                color: #f6b93f;
+                                transition: 0.5s;
+                                text-decoration: none;
+                            }
+                            
+                            #faq a:hover{
+                                color: #f6b93f;
+                                outline: none;
+                                text-decoration: none;
+                            }
+                            
+                            #faq {
+                                padding: 0 0 60px 0;
+                                background: #1f1486;
+                                border-radius : 20%;
+                            }
+                            
+                            #faq h2 {
+                                font-size: 50px;
+                                font-weight: bold;
+                                margin-bottom: 10px;
+                                color: f2f2f3;
+                                text-align: center;
+                            }
+                            
+                            #faq #faq-list {
+                                padding: 0;
+                                list-style: none;
+                            }
+                            
+                            #faq #faq-list li {
+                                border-bottom: 2px solid #f6b93f;
+                            }
+                            
+                            #faq #faq-list a {
+                                padding: 18px 0;
+                                display: block;
+                                position: relative;
+                                font-size: 16px;
+                                line-height: 24px;
+                                /* font-weight: 600; */
+                                padding-left: 5px;
+                                padding-right: 30px;
+                            }
+                            
+                            #faq #faq-list i {
+                                font-size: 24px;
+                                position: absolute;
+                                margin-right: 5px;
+                                right: 0;
+                                top: 16px;
+                            }
+                            
+                            #faq #faq-list p {
+                                margin-bottom: 20px;
+                                color: #FFF;
+                            }
+                            
+                            #faq #faq-list a.collapse {
+                                color: #f6b93f;
+                            }
+                            
+                            #faq #faq-list a.collapsed {
+                                color: #f2f2f3;
+                            }
+                            
+                            #faq #faq-list a.collapsed i::before {
+                                content: "\f055" !important;
+                            }
+                            
+                            #faq #faq2-list {
+                                padding: 0;
+                                list-style: none;
+                            }
+                            
+                            #faq #faq2-list li {
+                                border-bottom: 2px solid #f6b93f;
+                            }
+                            
+                            #faq #faq2-list a {
+                                padding: 18px 0;
+                                display: block;
+                                position: relative;
+                                font-size: 16px;
+                                line-height: 24px;
+                                /* font-weight: 600; */
+                                padding-left: 5px;
+                                padding-right: 30px;
+                            }
+                            
+                            #faq #faq2-list i {
+                                font-size: 24px;
+                                position: absolute;
+                                margin-right: 5px;
+                                right: 0;
+                                top: 16px;
+                            }
+                            
+                            #faq #faq2-list p {
+                                margin-bottom: 20px;
+                                color: #f2f2f3;
+                            }
+                            
+                            #faq #faq2-list a.collapse {
+                                color: #f6b93f;
+                            }
+                            
+                            #faq #faq2-list a.collapsed {
+                                color: #f2f2f3;
+                            }
+                            
+                            #faq #faq2-list a.collapsed i::before {
+                                content: "\f055" !important;
+                            }
+                                    </style>
+         <!-- <section id="themes" class="themeclass-grid">          
+   <div class="flip">
+       <div class="front" style="background-image: url(/assets/img/tracks/medtech.png?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
+          <h1 class="text-shadow" style="font-size: 2.2em; color: white">Healthcare and Technology</hi>
+       </div>
+       <div class="back">
+          
+          <p>This track is about how technology can help the people of the healthcare department. Here is your perfect chance to appreciate and support those who have kept their own well-being as secondary, and prioritised working day-and-night for us</p>
+       </div>
+   </div>
+   <div class="flip">
+       <div class="front" style="background-image: url(/assets/img/tracks/misinfo.png?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
+          <h1 class="text-shadow" style=" font-size: 2.2em; color: white">Improving Awareness and Behaviour</hi>
+       </div>
+       <div class="back">
+      
+          <p>The information regarding the pandemic changes rapidly, with a lot of false claims and fake news being circulated. Due to this, it is becoming hard for people to keep up on what they need to know and what they need to do. Find ways that can help improve awareness and behaviour of the people.</p>
+       </div>
+   </div>
+   <div class="flip">
+       <div class="front" style="background-image: url(/assets/img/tracks/remoteworking.png?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
+          <h1 class="text-shadow" style=" font-size: 2.2em;color: white">Working Remotely</hi>
+       </div>
+       <div class="back">
+          <p>Remote working can be tough for the people who have a habit of working in-office. Hence, this track aims at making it easier for everyone to enhance their productivity at home, without feeling isolated.</p>
+       </div>
+   </div>
+   <div class="flip">
+       <div class="front" style="background-image: url(/assets/img/tracks/support.png?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
+          <h1 class="text-shadow" style=" font-size: 2.2em;color: white">Supporting At-Risk or Quarantined People</hi>
+       </div>
+       <div class="back">
+          <p>Find ways to help the ones who are self-isolating at home or are quarantined, and helping the vulnerable people stay safe.</p>
+       </div>
+   </div>
+         </section> -->
+         <div class="row tracks">
+
+            <div class="col-sm">
+               <img src="/assets/img/tracks/medtech.png" width="200px" height="200px" style ="display: block;margin-left: auto;margin-right: auto;"/>
+               <h5>Healthcare and Technology</h5>
+               <p>This track is about how technology can help the people of the healthcare department. Here is your perfect chance to appreciate and support those who have kept their own well-being as secondary, and prioritised working day-and-night for us.</p>
+           </div>
+           <div class="col-sm">
+               <img src="/assets/img/tracks/misinfo.png" width="200px" height="200px" style ="display: block;margin-left: auto;margin-right: auto;"/>
+               <h5>Improving Awareness and Behaviour</h5>
+               <p>The information regarding the pandemic changes rapidly, with a lot of false claims and fake news being circulated. Due to this, it is becoming hard for people to keep up on what they need to know and what they need to do. Find ways that can help improve awareness and behaviour of the people.</p>
+   </div>
+   <br>
+   <div class="col-sm">
+       <img src="/assets/img/tracks/remoteworking.png" width="200px" height="200px" style ="display: block;margin-left: auto;margin-right: auto;"/>
+       <h5>Working Remotely from Home</h5>
+       <p>Remote working can be tough for the people who have a habit of working in-office.</p>
+   </div>
+   <div class="col-sm">
+       <img src="/assets/img/tracks/support.png" width="200px" height="200px" style ="display: block;margin-left: auto;margin-right: auto;"/>
+       <h5>Supporting At-Risk or Quarantined People</h5>
+       <p>Find ways to help the ones who are self-isolating at home or are quarantined, and helping the vulnerable people stay safe.</p>
+   </div>
+   </div>
+                 <section id="faq">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>FAQs </h2>
+                            <br />
+                        </div>
+                        <!-- <div class="row justify-content-center align-items-center"> -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul id="faq-list">
+                                    <li>
+                                        <a data-toggle="collapse" class="collapsed" href="#faq1">What is a hackathon? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq1" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                A hackathon is an invention marathon where you can work with people around the globe to build a project related to technology! It isn’t about hacking into a system, it’s instead about hacking something together and learning a great deal in the process.
+                                            </p>
+                                        </div>
+                                    </li>
+            
+                                    <li>
+                                        <a data-toggle="collapse" class="collapsed" href="#faq2">What is an online hackathon?<i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq2" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                It’s an invention marathon like the traditional in-person hackathon, but held remotely!
+                                            </p>
+                                        </div>
+                                    </li>
+            
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq3" class="collapsed">
+                                            How long will it be on for? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq3" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                The event will be running for about one week from 11th April to 19th April.
+                                            </p>
+                                        </div>
+                                    </li>
+            
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq4" class="collapsed"> Who can participate? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq4" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                Everyone is welcome to participate, be it, students, professionals or Aliens from different Planet!
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq5" class="collapsed">How will project submissions work?<i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq5" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                To participate, click on the “Apply with Devfolio” button. You will then be able to create your project once the hackathon starts. To be eligible for the judging process you’ll have to submit the project before the hackathon ends.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                       
+                                </ul>
+                            </div>
+            
+                            <div class="col-lg-6">
+                                <ul id="faq2-list">
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq8" class="collapsed"> How will judging work? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq8" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                We’ll be reviewing submissions on Devfolio!
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq9" class="collapsed">Do I need to be a student? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq9" class="collapse" data-parent="#faq-list">
+                                            <p>
+                                                Absolutely not! The team behind HackOn is mostly made up of students, however anyone age 13 and above can give it a go!</p>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq10" class="collapsed">How much does it cost? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq10" class="collapse" data-parent="#faq2-list">
+                                            <p>
+                                                Zero. Zip. Zilch. Nada. Nothing. Admission to HackOn is completely free, thanks to our sponsors!</p>
+                                            </p>
+                                        </div>
+                                    </li>
+            
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq11" class="collapsed">Is there a code of conduct?
+                                       <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq11" class="collapse" data-parent="#faq2-list">
+                                            <p>
+                                                Yes, we will be following the <a href="https://devfolio.co/code-of-conduct">Devfolio’s Code Of Conduct</a>!
+                                            </p>
+                                        </div>
+                                    </li>
+            
+                                    <li>
+                                        <a data-toggle="collapse" href="#faq12" class="collapsed">Where can I find updates? <i class="fa fa-minus-circle"></i></a>
+                                        <div id="faq12" class="collapse" data-parent="#faq2-list">
+                                            <p>  We have an <a href="https://discord.gg/RsQQKV7">active Discord</a> for communication, along with a <a href="https://t.me/HackathonHackers">Telegram Group</a> where you can ask for help.</p>
+
+                                        </div>
+                                    </li>
+            
+                                   
+            
+                                </ul>
+                            </div>
+                            <!-- </div> -->
+            
+                        </div>
+            
+                </section>
+
+                    <h2>Powered by</h2>
+                    <div class="poweredby-logos">
+                        <a href="https://devfolio.co/hackathons"><img class="logo" src="./assets/img/powered_by/dev.svg" alt="Devfolio"/></a>
+                        <a href="https://education.github.com/pack"><img class="logo" src="./assets/img/powered_by/GitHub_Logo_White.png" alt="GitHub Student Developer Pack"/></a>
+                    </div>
+                    <h2>Community Partners</h2>
+                    <div class="partneredwith-logos">
+                        <a href="https://www.meetup.com/Microsoft-Student-Partners-India/"><img class="logo" src="./assets/img/partnered_socs/msp.png" /></a>
+
+
+                    </div>
+
+                    <h2>Patrons</h2>
+                    <div class="thanksto-logos">
+                        <a href="https://www.gitkraken.com/"><img class="logo" src="./assets/img/thanks_to/gitkraken.png" alt="GitKraken"/></a>
+                        <a href="https://scaler.com/"><img class="logo" src="./assets/img/thanks_to/unnamed.png" alt="Scaler Academy By InterviewBit"/></a>
+                        <a href="https://mlh.io/"><img class="logo" src="./assets/img/thanks_to/mlh-logo-white.svg" alt="Major League Hacking"/></a>
+
+                    </div>
+
+                    <h2>Team behind the Hackathon!</h2>
+                    <div class="team">
+                        <a href="https://twitter.com/rishabhbansal97" class="team-item">
+                            <img src="./assets/img/team/rishabh.png" /> 
+                            <div class="name">Rishabh Bansal</div>
+                            <div class="position">Lead Organiser</div>
+                        </a>
+                        <a href="https://twitter.com/Shubhangi_0304" class="team-item">
+                            <img src="./assets/img/team/shubhangi.png" /> 
+                            <div class="name">Shubhangi Gupta</div>
+                            <div class="position">Co Organiser</div>
+                        </a>
+                        <a href="https://twitter.com/GunnikaBatra" class="team-item">
+                            <img src="./assets/img/team/gunnika.png" /> 
+                            <div class="name">Gunnika Batra</div>
+                            <div class="position">Coordinator</div>
+                        </a>
+                        <a href="https://twitter.com/LoveneeshDhir" class="team-item">
+                            <img src="./assets/img/team/loveneesh.png" /> 
+                            <div class="name">Loveneesh Dhir</div>
+                            <div class="position">Coordinator</div>
+                        </a>
+                        <a href="https://twitter.com/bhumika_0311" class="team-item">
+                            <img src="./assets/img/team/bhumika.png" /> 
+                            <div class="name">Bhumika Saxena</div>
+                            <div class="position">Coordinator</div>
+                        </a>
+                        <a href="https://twitter.com/PahulSingh10" class="team-item">
+                            <img src="./assets/img/team/pahul.png" /> 
+                            <div class="name">Pahul Singh</div>
+                            <div class="position">Coordinator</div>
+                        </a>
+                        <a href="https://twitter.com/howdevelop" class="team-item">
+                            <img src="./assets/img/team/shivay.png" /> 
+                            <div class="name">Shivay Lamba</div>
+                            <div class="position">Tech Lead</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include footer.html %}
+    </body>
+</html>
