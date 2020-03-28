@@ -9,9 +9,9 @@ defaults:
         logo: './assets/img/main-logo.svg'
       socials:
         devfolio: https://guide.devfolio.co/appendix/c-apply-with-devfolio-button-integration
-        discord: https://discord.gg/RsQQKV7
+        discord: https://discord.hackon.tech/
         workshops: https://forms.gle/QFUvfQrgmaRuBNoy6
-        telegram: https://t.me/hackathonhackers
+        telegram: https://telegram.hackon.tech/
 
         schedule:
 
