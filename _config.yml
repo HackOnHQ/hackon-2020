@@ -8,7 +8,7 @@ defaults:
         small_logo: './assets/img/main-logo.svg'
         logo: './assets/img/main-logo.svg'
       socials:
-        devfolio: https://hackon.devfolio.co/
+        devfolio: https://guide.devfolio.co/appendix/c-apply-with-devfolio-button-integration
         discord: https://discord.gg/RsQQKV7
         workshops: https://forms.gle/QFUvfQrgmaRuBNoy6
         telegram: https://t.me/hackathonhackers
