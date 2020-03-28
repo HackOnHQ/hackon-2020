@@ -37,9 +37,9 @@
                 -->
 
                 <div id="register">
-                    <a href="{{ page.socials.devfolio }}">
-                        <button type="button" class="btn btn-primary"><i class="fas fa-check-circle"></i>Apply at Devfolio</button>
-                    </a>
+                    <button type="button" class="btn btn-primary" id="devfolio-apply-now">
+                        <i class="fas fa-check-circle"></i>Apply at Devfolio
+                    </button>
                 </div>
 
                 <a href="{{ page.socials.workshops }}">
@@ -49,3 +49,25 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let devfolioOptions = {
+            buttonSelector: '#devfolio-apply-now',
+            key: 'hackon',
+        }
+    
+        let script = document.createElement('script');
+        script.src = "https://apply.devfolio.co";
+        document.head.append(script);
+    
+        script.onload = function () {
+            new Devfolio(devfolioOptions);
+        }
+    
+        script.onerror = function () {
+            document.querySelector(devfolioOptions.buttonSelector).addEventListener('click', function () {
+                window.location.href = 'https://devfolio.co/external-apply/' + devfolioOptions.key;
+            });
+        }
+    });
+</script>
