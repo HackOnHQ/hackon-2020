@@ -50,7 +50,12 @@
                 -->
 
         <div id="register" class="d-flex justify-content-center">
-          <button type="button" class="btn btn-primary" id="devfolio-apply-now">
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="devfolio-apply-now"
+            onclick="onclickTransfer()"
+          >
             <i class="fas fa-check-circle"></i>Apply at Devfolio
           </button>
         </div>
@@ -65,6 +70,13 @@
   </div>
 </div>
 <script>
+  function onclickTransfer() {
+    window.setTimeout(function() {
+      window.location.href = "https://devfolio.co/";
+    }),
+      1000;
+  }
+
   document.addEventListener("DOMContentLoaded", function() {
     let devfolioOptions = {
       buttonSelector: "#devfolio-apply-now",
@@ -83,6 +95,7 @@
       document
         .querySelector(devfolioOptions.buttonSelector)
         .addEventListener("click", function() {
+          alert("ss");
           window.location.href =
             "https://devfolio.co/external-apply/" + devfolioOptions.key;
         });
