@@ -1,7 +1,7 @@
 .nav-bar {
     width: 100%;
     display: inline-block;
-    background-color: #0e1428;
+    background-color: #fff;
     box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2);
     font-family: sans-serif;
 }
