@@ -12,6 +12,9 @@ defaults:
         discord: https://discord.hackon.tech/
         workshops: https://forms.gle/QFUvfQrgmaRuBNoy6
         telegram: https://telegram.hackon.tech/
+        youtube: youtube.hackon.tech
+        twitter: https://twitter.com/HackOnHackathon
+        linkedin: https://www.linkedin.com/company/hackonhackathon/
 
         schedule:
 
