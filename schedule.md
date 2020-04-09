@@ -47,14 +47,14 @@ scripts:
 <div id="calendar"></div>
 <div id="event-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: #ebc805;">
       <div class="modal-header">
         <h4 class="modal-title"><i class="material-icons">event</i><b id="event-title"></b></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="color: black;">
       <div><i class="material-icons">label</i> Type - <b id="event-type"></b></div>
         <div><i class="material-icons">access_time</i> Date - <b id="event-date"></b></div>
         <div><i class="material-icons">person</i> Organiser - <b id="event-person"></b></div>
